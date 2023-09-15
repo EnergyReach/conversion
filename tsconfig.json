@@ -1,0 +1,13 @@
+{
+  "extends": "@energyreach/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "-/*": ["src/*"]
+    },
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}

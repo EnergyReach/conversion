@@ -1,0 +1,24 @@
+name: Release prepare
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: Version
+        required: true
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
+      - run: |
+          git config --global user.name 'Svilen Piralkov'
+          git config --global user.email 'svile@users.noreply.github.com'
+      - run: pnpm install
+      - run: pnpm version ${{ github.event.inputs.version }} --no-git-tag-version
+      - run: git commit -am "Prepare release ${{ github.event.inputs.version }}"
+      - run: git push

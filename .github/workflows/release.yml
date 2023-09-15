@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    # Trigger on any tag
+    tags: [ '*' ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@energyreach'
+          always-auth: 'true'
+      - uses: pnpm/action-setup@v2
+      - run: pnpm install
+      - run: pnpm format-check
+      - run: pnpm lint
+      - run: pnpm compile
+      - run: pnpm test
+      - run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
