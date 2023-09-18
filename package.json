@@ -2,9 +2,10 @@
   "name": "@energyreach/conversion",
   "description": "A simple library to perform units conversion.",
   "version": "0.1.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "typings/index.d.ts",
   "license": "MIT",
-  "packageManager": "pnpm@8.7.5",
+  "packageManager": "pnpm@8.7.6",
   "engines": {
     "npm": ">=9.0.0",
     "node": ">=18.0.0"
@@ -15,6 +16,7 @@
     "format-check": "prettier --check 'src/**/*' 'tests/**/*'",
     "lint": "eslint src/** tests/**",
     "compile": "tsc --noEmit true",
+    "build": "tsc",
     "test": "jest --coverage"
   },
   "dependencies": {

@@ -2,12 +2,13 @@
   "extends": "@energyreach/typescript-config/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
+    "declarationDir": "typings",
     "paths": {
       "-/*": ["src/*"]
     },
   },
   "include": [
     "src",
-    "tests"
   ]
 }
