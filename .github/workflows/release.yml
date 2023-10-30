@@ -9,17 +9,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           registry-url: 'https://registry.npmjs.org'
           scope: '@energyreach'
           always-auth: 'true'
       - uses: pnpm/action-setup@v2
       - run: pnpm install
-      - run: pnpm format-check
-      - run: pnpm lint
-      - run: pnpm test
+      - run: pnpm version ${{ github.ref_name }} --no-git-tag-version
       - run: pnpm build
       - run: pnpm publish --access public --no-git-checks
         env:

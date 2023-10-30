@@ -1,7 +1,7 @@
 {
   "name": "@energyreach/conversion",
   "description": "A simple library to perform units conversion.",
-  "version": "0.1.1",
+  "version": "dev",
   "main": "dist/index.js",
   "types": "typings/index.d.ts",
   "license": "MIT",

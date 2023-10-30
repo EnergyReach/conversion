@@ -11,5 +11,6 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      development-dependencies:
-        dependency-type: "development"
+      dependencies:
+        patterns:
+          - "*"
