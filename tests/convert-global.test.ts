@@ -1,5 +1,4 @@
 import Convert from '-/convert';
-// import ConvertGlobal from '-/convert-global';
 import UnitsLibrary from '-/units';
 
 describe('Functional tests', () => {

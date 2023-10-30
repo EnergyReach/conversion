@@ -1,5 +1,5 @@
 {
-  "extends": "@energyreach/typescript-config/tsconfig.json",
+  "extends": "@svile/node-development/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
@@ -10,5 +10,6 @@
   },
   "include": [
     "src",
+    "tests"
   ]
 }

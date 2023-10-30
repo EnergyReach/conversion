@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('@energyreach/jest-config'),
+  ...require('@svile/node-development/jest'),
   moduleNameMapper: {
     '^-/(.*)': '<rootDir>/src/$1',
   },
