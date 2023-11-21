@@ -2,10 +2,10 @@
   "name": "@energyreach/conversion",
   "description": "A simple library to perform units conversion.",
   "version": "dev",
-  "main": "dist/index.js",
-  "types": "typings/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./typings/index.d.ts",
   "license": "MIT",
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@8.10.5",
   "engines": {
     "npm": ">=9.0.0",
     "node": ">=18.0.0"
