@@ -10,25 +10,25 @@ npm install @energyreach/conversion
 ```
 Then use it in code as follows:
 ```ts
-import { Conversion } from '@energyreach/conversion';
+import { Convert } from '@energyreach/conversion';
 ```
 
 ### Class creation
 Create a conversion object to work with. If no constructor parameters are specified, the default [UnitsLibrary](./src/units.ts) will be loaded.
 ```ts
 // object creation with default units library
-const a = new Conversion();
+const a = new Convert();
 
 // object creation with energy units conversion only
-const a = new Conversion('energy');
+const a = new Convert('energy');
 
 // object creation with temperature and volume units conversion only
-const a = new Conversion(['temperature', 'volume']);
+const a = new Convert(['temperature', 'volume']);
 
 // object creation with custom units conversion library
-const a = new Conversion(customUnitsLibrary);
+const a = new Convert(customUnitsLibrary);
 ```
-Parameters to `Conversion()`:
+Parameters to `Convert()`:
 - group name (`str`): One of the units groups to be loaded as specified in [Group](./src/types.ts) type.
 - a list of group names (`str[]`): A list of the units groups to be loaded as specified in [Group](./src/types.ts) type.
 - units library (`Units`): If specified, only this library will be loaded.
@@ -37,7 +37,7 @@ Parameters to `Conversion()`:
 Other than using the builtin unit conversions, you can also create and import your own as follows:
 ```ts
 // object creation with default units library
-const a = new Conversion();
+const a = new Convert();
 a.load({
     // Define distance group conversions
     // NOTE: Unit names can be anything, but must be unique, otherwise an existing unit in cache will be overwritten
@@ -63,7 +63,7 @@ _NOTE: Calling `load` will not clear previous unit loads, but will instead load 
 Perform simple unit conversions.
 ```ts
 // object creation with default units library
-const a = new Conversion();
+const a = new Convert();
 
 // returns a float number = 54.5
 a.from(12.5, 'C').to('F');
@@ -81,7 +81,7 @@ a.from(18.29, 'C').value(1);
 You can set precisions in two different ways. Object based precision, which will carry throughout the life of a conversion object, or on-the-go precision, which will apply only to the function call, while the object will retain its originally set precision.
 ```ts
 // The default precision is 3 digits after the decimal point
-const a = new Conversion();
+const a = new Convert();
 
 // set the precision to 5 digits after the decimal point
 a.precision(5);
@@ -100,7 +100,7 @@ You can also manually check if a unit is loaded and can be worked with.
 
 ```ts
 // The default precision is 3 digits after the decimal point
-const a = new Conversion();
+const a = new Convert();
 
 // check if we can work with cubic meters
 // An error will be thrown if the unit is not found in cache
@@ -114,7 +114,7 @@ You can also call the display name of each unit. The following will return cubic
 
 ```ts
 // The default precision is 3 digits after the decimal point
-const a = new Conversion();
+const a = new Convert();
 
 // returns the display name for cubic meters
 a.display('m^3')
@@ -125,14 +125,14 @@ There is a limited set of static functions which can be used for convenience.
 
 ```ts
 // Clear the static cache
-Conversion.clear();
+Convert.clear();
 
 // Load energy and volume units in static cache
-Conversion.load(['energy', 'volume']);
+Convert.load(['energy', 'volume']);
 
 // verify we can use volume
-Conversion.verifyUnit('m^3')
+Convert.verifyUnit('m^3')
 
 // returns the display name for volume
-Conversion.display('m^3')
+Convert.display('m^3')
 ```
