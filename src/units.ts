@@ -1,6 +1,8 @@
 import { Units, Value } from './types';
 
 const units: Units = {
+  // No units conversion values group
+  none: { none: {} },
   // boolean conversion values group
   boolean: { boolean: {} },
   // current conversion values group
