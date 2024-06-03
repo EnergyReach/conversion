@@ -27,7 +27,7 @@
     "@svile/node-development": "^0.2.4",
     "@types/big.js": "^6.2.2",
     "@types/jest": "^29.5.10",
-    "eslint": "^8.54.0",
+    "eslint": "^9.4.0",
     "jest": "^29.7.0",
     "prettier": "^3.1.0",
     "typescript": "^5.4.5"
