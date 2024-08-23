@@ -16,7 +16,7 @@ jobs:
           node-version: 20
       - uses: pnpm/action-setup@v2
       - run: pnpm install
-      - run: pnpm format-check
+      - run: pnpm format:check
       - run: pnpm lint
-      - run: pnpm compile
-      - run: pnpm test
+      - run: pnpm build:check
+      - run: pnpm test:coverage

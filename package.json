@@ -13,24 +13,26 @@
   "scripts": {
     "setup": "pnpm run format && pnpm run lint && pnpm run compile",
     "format": "prettier --write 'src/**/*' 'tests/**/*'",
-    "format-check": "prettier --check 'src/**/*' 'tests/**/*'",
+    "format:check": "prettier --check 'src/**/*' 'tests/**/*'",
     "lint": "eslint src/** tests/**",
-    "compile": "tsc --noEmit true",
+    "build:check": "tsc --noEmit true",
     "build": "tsc",
-    "test": "jest --coverage"
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "big.js": "^6.2.1",
     "tslib": "^2.6.3"
   },
   "devDependencies": {
-    "@svile/node-development": "^0.2.7",
+    "@eslint/js": "^9.9.0",
     "@types/big.js": "^6.2.2",
-    "@types/jest": "^29.5.12",
-    "eslint": "^8.57.0",
-    "jest": "^29.7.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "eslint": "^9.9.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0",
+    "vitest": "^2.0.5"
   },
   "repository": {
     "type": "git",
@@ -46,12 +48,5 @@
   "bugs": {
     "url": "https://github.com/EnergyReach/conversion/issues"
   },
-  "homepage": "https://github.com/EnergyReach/conversion/",
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/@svile/node-development/eslint"
-    ],
-    "root": true
-  },
-  "prettier": "@svile/node-development/prettier"
+  "homepage": "https://github.com/EnergyReach/conversion/"
 }

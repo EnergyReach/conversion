@@ -1,12 +1,35 @@
 {
-  "extends": "@svile/node-development/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "declarationDir": "typings",
     "paths": {
-      "-/*": ["src/*"]
+      "~/*": ["src/*"]
     },
+    "declaration": true,
+    "declarationDir": "typings",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true
   },
   "include": [
     "**/*.ts",
