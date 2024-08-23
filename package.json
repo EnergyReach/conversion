@@ -5,13 +5,13 @@
   "main": "./dist/index.js",
   "types": "./typings/index.d.ts",
   "license": "MIT",
-  "packageManager": "pnpm@9.0.1",
+  "packageManager": "pnpm@9.8.0",
   "engines": {
-    "npm": ">=9.0.0",
-    "node": ">=20.0.0"
+    "pnpm": ">=9",
+    "node": ">=20"
   },
   "scripts": {
-    "setup": "npm run format && npm run lint && npm run compile",
+    "setup": "pnpm run format && pnpm run lint && pnpm run compile",
     "format": "prettier --write 'src/**/*' 'tests/**/*'",
     "format-check": "prettier --check 'src/**/*' 'tests/**/*'",
     "lint": "eslint src/** tests/**",
@@ -21,16 +21,16 @@
   },
   "dependencies": {
     "big.js": "^6.2.1",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.3"
   },
   "devDependencies": {
-    "@svile/node-development": "^0.2.4",
+    "@svile/node-development": "^0.2.7",
     "@types/big.js": "^6.2.2",
-    "@types/jest": "^29.5.10",
-    "eslint": "^8.54.0",
+    "@types/jest": "^29.5.12",
+    "eslint": "^8.57.0",
     "jest": "^29.7.0",
-    "prettier": "^3.1.0",
-    "typescript": "^5.4.5"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   },
   "repository": {
     "type": "git",
